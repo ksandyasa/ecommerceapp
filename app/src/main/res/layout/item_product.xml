@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.sehatqtestengineer.viewmodel.ProductViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/cv_product"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:background="@drawable/item_product_background"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_product"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_product"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:scaleType="fitCenter"
+                    app:imageUrl="@{viewModel.getProductImageUrl()}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_loved"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_love_empty"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
+            app:mutableLoved="@{viewModel.getProductLoved()}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_product"
+            />
+
+        <TextView
+            android:id="@+id/tv_product"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Judul"
+            app:mutableText="@{viewModel.getProductTitle()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
