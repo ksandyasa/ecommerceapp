@@ -1,5 +1,6 @@
 package com.sehatqtestengineer.features.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -23,6 +24,11 @@ class HomeActivity: AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         binding.viewModel = viewModel
+
+        binding.tvNavPurchase.setOnClickListener {
+            val intent = Intent(this@HomeActivity, PurchaseActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

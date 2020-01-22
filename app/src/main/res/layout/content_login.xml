@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.sehatqtestengineer.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/content_login_background"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="LOGIN"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+                <EditText
+                    android:id="@+id/ed_username"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:hint="Username"
+                    android:inputType="textPersonName"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:background="@drawable/content_login_background"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+                <EditText
+                    android:id="@+id/ed_password"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:background="@drawable/content_login_background"
+                    app:layout_constraintTop_toBottomOf="@id/ed_username"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    />
+
+                <CheckBox
+                    android:id="@+id/ctv_remember"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Remember Me"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ed_password"/>
+
+                <Button
+                    android:id="@+id/btn_sign_in"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Sign In"
+                    android:background="@drawable/btn_sign_in"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ed_password"
+                    />
+
+                <Button
+                    android:id="@+id/btn_facebook"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginRight="64dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginBottom="16dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Sign In with Facebook"
+                    android:background="@drawable/btn_sign_in_fb"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_in"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_google"
+                    />
+
+                <Button
+                    android:id="@+id/btn_google"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="64dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginBottom="32dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Sign In with Google"
+                    android:background="@drawable/btn_sign_in_google"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -3,6 +3,7 @@ package com.sehatqtestengineer.di.component
 import com.sehatqtestengineer.di.module.NetworkModule
 import com.sehatqtestengineer.viewmodel.CategoryViewModel
 import com.sehatqtestengineer.viewmodel.HomeViewModel
+import com.sehatqtestengineer.viewmodel.LoginViewModel
 import com.sehatqtestengineer.viewmodel.ProductViewModel
 import dagger.Component
 import javax.inject.Singleton
@@ -11,6 +12,7 @@ import javax.inject.Singleton
 @Component(modules = [(NetworkModule::class)])
 interface ViewModelInjector {
 
+    fun inject(loginViewModel: LoginViewModel)
     fun inject(homeViewModel: HomeViewModel)
     fun inject(productViewModel: ProductViewModel)
     fun inject(categoryViewModel: CategoryViewModel)

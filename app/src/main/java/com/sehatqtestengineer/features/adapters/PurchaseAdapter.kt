@@ -3,26 +3,22 @@ package com.sehatqtestengineer.features.adapters
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.sehatqtestengineer.databinding.ItemProductBinding
-import com.sehatqtestengineer.model.Product
 import com.sehatqtestengineer.R
+import com.sehatqtestengineer.databinding.ItemPurchaseBinding
+import com.sehatqtestengineer.model.Product
 import com.sehatqtestengineer.viewmodel.ProductViewModel
 
-class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class PurchaseAdapter: RecyclerView.Adapter<PurchaseAdapter.PurchaseViewHolder>() {
 
     private lateinit var productList: List<Product>
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        val binding:ItemProductBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_product, parent,false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PurchaseViewHolder {
+        val binding:ItemPurchaseBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_purchase, parent,false)
 
-        binding.cvProduct.setOnClickListener {
-            Toast.makeText(parent.context,"position: " + binding.viewModel!!.getProductTitle(), Toast.LENGTH_SHORT).show()
-        }
+        return PurchaseViewHolder(binding)
 
-        return ProductViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +26,7 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
         return if(::productList.isInitialized) productList.size else 0
     }
 
-    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PurchaseViewHolder, position: Int) {
         holder.bind(productList[position])
     }
 
@@ -40,7 +36,7 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ProductViewHolder(private val binding: ItemProductBinding): RecyclerView.ViewHolder(binding.root) {
+    class PurchaseViewHolder(private val binding: ItemPurchaseBinding): RecyclerView.ViewHolder(binding.root) {
 
         private val viewModel = ProductViewModel()
 
@@ -48,5 +44,6 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
             viewModel.bind(product)
             binding.viewModel = viewModel
         }
+
     }
 }
