@@ -1,10 +1,7 @@
 package com.sehatqtestengineer.di.component
 
 import com.sehatqtestengineer.di.module.NetworkModule
-import com.sehatqtestengineer.viewmodel.CategoryViewModel
-import com.sehatqtestengineer.viewmodel.HomeViewModel
-import com.sehatqtestengineer.viewmodel.LoginViewModel
-import com.sehatqtestengineer.viewmodel.ProductViewModel
+import com.sehatqtestengineer.viewmodel.*
 import dagger.Component
 import javax.inject.Singleton
 
@@ -16,6 +13,9 @@ interface ViewModelInjector {
     fun inject(homeViewModel: HomeViewModel)
     fun inject(productViewModel: ProductViewModel)
     fun inject(categoryViewModel: CategoryViewModel)
+    fun inject(detailViewModel: DetailViewModel)
+    fun inject(purchaseViewModel: PurchaseViewModel)
+    fun inject(purchaseListViewModel: PurchaseListViewModel)
 
     @Component.Builder
     interface Builder {

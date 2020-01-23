@@ -46,7 +46,8 @@ class HomeViewModel: BaseViewModel() {
 
     private fun onRetrieveHomeSuccess(data: Data) {
         Log.d("Test", "size product: " + data.productPromo.size)
-        Log.d("Test", "size category:" + data.category.size)
+        Log.d("Test", "size category:" + data.category.size
+        )
         productAdapter.updateProductList(data.productPromo)
         categoryAdapter.updateCategoryList(data.category)
     }
@@ -57,7 +58,7 @@ class HomeViewModel: BaseViewModel() {
 
     override fun onCleared() {
         super.onCleared()
-        subscription.dispose()
+        if (::subscription.isInitialized) subscription.dispose()
     }
 
 }

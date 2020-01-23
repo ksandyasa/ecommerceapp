@@ -5,7 +5,11 @@
     <data>
         <variable
             name="viewModel"
-            type="com.sehatqtestengineer.viewmodel.ProductViewModel" />
+            type="com.sehatqtestengineer.viewmodel.PurchaseListViewModel" />
+
+        <variable
+            name="position"
+            type="int" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,8 +21,8 @@
             android:id="@+id/iv_purchase_image"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:scaleType="center"
-            app:imageUrl="@{viewModel.getProductImageUrl()}"
+            android:scaleType="fitCenter"
+            app:imageUrl="@{viewModel.getPurchaseImageUrl()}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -27,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="vertical"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="16dp"
             app:layout_constraintLeft_toRightOf="@id/iv_purchase_image"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -38,10 +42,10 @@
                 android:id="@+id/tv_purchase_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Nama Item"
                 android:textStyle="bold"
-                app:mutableText="@{viewModel.getProductTitle()}"
+                app:mutableText="@{viewModel.getPurchaseTitle()}"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -54,7 +58,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Harga"
                 android:layout_marginTop="4dp"
-                app:mutableText="@{viewModel.getProductPrice()}"
+                app:mutableText="@{viewModel.getPurchasePrice()}"
                 app:layout_constraintTop_toBottomOf="@id/tv_purchase_name"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

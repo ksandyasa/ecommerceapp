@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".features.ui.LoginActivity"
-            android:label="@string/activity_login"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".features.ui.HomeActivity"
-            android:label="@string/activity_home"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".features.ui.DetailActivity"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".features.ui.PurchaseActivity"

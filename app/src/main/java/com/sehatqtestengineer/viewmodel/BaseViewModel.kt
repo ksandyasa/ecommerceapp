@@ -21,6 +21,9 @@ abstract class BaseViewModel: ViewModel() {
             is HomeViewModel -> injector.inject(this)
             is ProductViewModel -> injector.inject(this)
             is CategoryViewModel -> injector.inject(this)
+            is DetailViewModel -> injector.inject(this)
+            is PurchaseViewModel -> injector.inject(this)
+            is PurchaseListViewModel -> injector.inject(this)
         }
     }
 

@@ -49,6 +49,7 @@ dependencies {
 
     implementation coreLibs
     implementation lifeCycleLibs
+    implementation dbLibs
     implementation supportLibs
     implementation layoutLibs
     implementation bindingViewLibs

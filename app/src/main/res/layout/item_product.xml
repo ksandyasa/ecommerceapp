@@ -7,6 +7,10 @@
         <variable
             name="viewModel"
             type="com.sehatqtestengineer.viewmodel.ProductViewModel" />
+        
+        <variable
+            name="position"
+            type="int" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
