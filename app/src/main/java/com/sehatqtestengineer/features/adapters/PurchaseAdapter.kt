@@ -1,6 +1,7 @@
 package com.sehatqtestengineer.features.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.sehatqtestengineer.R
 import com.sehatqtestengineer.databinding.ItemPurchaseBinding
+import com.sehatqtestengineer.features.ui.DetailActivity
 import com.sehatqtestengineer.model.Product
 import com.sehatqtestengineer.viewmodel.PurchaseListViewModel
 
@@ -30,6 +32,11 @@ class PurchaseAdapter: RecyclerView.Adapter<PurchaseAdapter.PurchaseViewHolder>(
 
     override fun onBindViewHolder(holder: PurchaseViewHolder, position: Int) {
         holder.bind(productList[position], position, context)
+        holder.getBind().clPurchaseContainer.setOnClickListener {
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("product_item", productList[position!!])
+            context.startActivity(intent)
+        }
     }
 
     fun updatePurchaseList(list: List<Product>) {
@@ -45,6 +52,11 @@ class PurchaseAdapter: RecyclerView.Adapter<PurchaseAdapter.PurchaseViewHolder>(
         fun bind(product: Product, position: Int, context: Context) {
             viewModel.bind(product, position, context)
             binding.viewModel = viewModel
+        }
+
+        fun getBind(): ItemPurchaseBinding {
+
+            return binding
         }
 
     }
